@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<hr lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<br>
+    <input type="text" size="5" name="text">
+    <input type="password" name="password" required>
+    <input type="date" name="date">
+    <input type="color">
+
+    <!-- 여러개 중 하나만 선택 시 -->
+    <!-- value는 실제로 백엔드/js에서 사용할 값 -->
+    <input type="radio" name="gender" value="male">남자
+    <input type="radio" name="gender" value="female">여자
+    <input type="radio" name="gender" value="none">알리고싶지 않음
+    </br>
+    <input type="checkbox" name="food" value="pizza">피자<br>
+    <input type="checkbox" name="food" value="hamburger">햄버거<br>
+    <input type="checkbox" name="food" value="pasta">파스타<br>
+
+    <input type="date" name="date" min="2020-01-01" max="2020-12-31">
+
+    <input type="month" id="month" name="month">
+
+    <input type="week" id="week" name="week">
+
+    <input type="time" id="time" name="time">
+
+    <input type="number" name="num" min="0" max="1000">
+
+    <input type="range" name="point" min="0" max="100">
+
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+
+<hr>
+<!-- 쿼리스트링: ? 뒤에 키=값 & 키=값
+    ?name=Kim&affiliation=SIAT -->
+<form>
+    <label for="name">이름:</label><br>
+    <input type="text" id="name" name="name" value="Kim"><br>
+    <label for="affiliation">소속:</label><br>
+    <input type="text" id="affiliation" name="affiliation" value="SIAT"><br><br>
+    <input type="submit" value="전송"> <!-- value를 지워보고 바꿔보기 -->
+    <input type="reset" value="초기화">
+</form>
+</body>
+</html>
