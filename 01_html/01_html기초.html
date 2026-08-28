@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 연습</title>
+</head>
+<br>
+    안녕하세요.<br/>
+    저는
+    김
+    경
+    모
+    입니다. 
+
+    <!-- 주석은 눈에 보이지 않습니다. -->
+     <!-- 들여쓰기 Shift + TAB 누르시면 하나 앞으로 끌어오고,
+        TAB 누리시면 하나 밀려납니다. -->
+    <h1>제목1</h1>
+    <h2>제목2</h2>
+    <h3>제목3</h3>
+    <h4>제목4</h4>
+    <h5>제목5</h5>
+    <h6>제목6</h6>
+    <!-- 에러가 있어도 그냥 무시합니다. -->
+    <h7>제목7</h7>
+    그냥 글씨
+
+    <!-- 리스트: 부모 / 자식 태그를 함께 사용
+        Unordered / Ordered-->
+    <ul>
+        <li>사과</li>
+        <li>짜장면</li>
+        <li>마라탕</li>
+    </ul>
+
+    <ol>
+        <li>사과</li>
+        <li>한식</li>
+        <li>짜장면</li>
+        <li>마라탕</li>
+    </ol>
+
+    <!-- 표 -->
+    <table border="3">
+        <!-- 행 -->
+        <tr> <!-- table row (행) -->
+            <td> <!-- table data (칸) -->
+                김경모
+            </td>
+            <td>
+                24
+            </td>
+        </tr>
+        <tr>
+            <td> <!-- table data (칸) -->
+                신짱구
+            </td>
+            <td>
+                5
+            </td>
+        </tr>
+        <tr>
+            <td> <!-- table data (칸) -->
+                신짱아
+            </td>
+            <td>
+                2
+            </td>
+        </tr>
+    </table>
+
+<!-- a (anchor) 태그를 사용해서 다른 문서와 연결을 -->
+<!-- 태그에 특정한 기능을 부여하기 위해 속성(attribute) -->
+<a href="00_emmet.html">00으로 넘어가기</a>
+
+<!-- 네이버로 가기 라는 내용에 naver.com을 연결하기 -->
+<a target="_blank" href="https://www.naver.com/">네이버로 가기</a>
+
+<!-- 이미지는 어떻게 첨부할까요
+ 개발은 로컬에서 하지만 서버는 현재 프로젝트부터 올리기 때문에
+ 경로는 상대결로, 현재 파일 기준으로 해당 파일이 어디에 있는지
+ 윈도우는 \, 웹은 / 으로 경로를 구분합니다. -->
+ <img src="data/jjanggu.png">
+</body>
+</html>
