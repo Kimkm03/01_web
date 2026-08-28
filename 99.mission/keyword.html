@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keywords | Kimkm03</title>
+
+  <style>
+    :root {
+      font-family: "Trebuchet MS", "Malgun Gothic", sans-serif;
+      color: #263238;
+      background: #eef2f3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      max-width: 1100px;
+      min-height: 100vh;
+      margin: 0 auto;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      position: relative;
+      min-height: 88px;
+      padding: 22px 7%;
+      background: #263238;
+    }
+
+    .logo {
+      position: absolute;
+      top: 22px;
+      left: 7%;
+      color: #ffffff;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    header nav {
+      position: absolute;
+      top: 28px;
+      right: 7%;
+      display: flex;
+      gap: 24px;
+    }
+
+    header nav a {
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .logo:hover,
+    .logo:focus-visible,
+    header nav a:hover,
+    header nav a:focus-visible,
+    header nav a[aria-current="page"] {
+      color: #80cbc4;
+    }
+
+    main {
+      padding: 64px 7%;
+    }
+
+    section {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #00796b;
+    }
+
+    [hidden] {
+      display: none;
+    }
+
+    footer {
+      position: relative;
+        min-height: 88px;
+        padding: 28px 7%;
+        color: #ffffff;
+        background: #37474f;
+        text-align: center;
+    }
+
+    footer nav {
+        position: absolute;
+        right: 7%;
+        bottom: 28px;
+      }
+
+      footer a {
+        color: #7f899c;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+    article {
+      margin-top: 24px;
+      padding: 24px;
+      border-left: 4px solid #00796b;
+      background: #e0f2f1;
+    }
+
+    article h2 {
+      margin-top: 0;
+      color: #00796b;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="index.html" aria-label="Kimkm03 소개 페이지">
+      KM
+    </a>
+
+    <nav aria-label="주요 메뉴">
+      <a href="index.html">소개</a>
+      <a href="keyword.html" aria-current="page">키워드</a>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="keyword-title">
+      <h1 id="keyword-title">About Me</h1>
+      <p>나를 설명하는 세 가지 키워드</p>
+
+      <article>
+        <h2>내가 즐겨보는 콘텐츠는?</h2>
+        <p>
+          일상 블로그 콘텐츠나 호러 OTT, 액션 영화 같은 콘텐츠를 주로 즐겨봅니다.
+        </p>
+      </article>
+
+      <article>
+        <h2>나의 취미는?</h2>
+        <p>
+          대중교통을 이용할 때 음악을 듣는 것을 좋아하고,
+          활동적인 취미로는 볼링을 즐깁니다.
+        </p>
+      </article>
+
+      <article>
+        <h2>외출할 때 가방에 꼭 챙기는 물품은?</h2>
+        <p>
+          음악을 들을 수 있는 버즈와 예기치 않게 비가 올 때를 대비한 우산을 챙깁니다.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p data-year></p>
+
+    <nav aria-label="외부 링크">
+        <!-- 페이지 외부로 이동하는 링크를 별도의 nav로 구분합니다. -->
+
+        <a
+          href="https://github.com/Kimkm03"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <!-- href: GitHub 주소로 이동합니다. -->
+          <!-- target="_blank": 새 탭에서 GitHub를 엽니다. -->
+          <!-- rel: 새 탭을 열 때 원본 페이지에 접근하지 못하도록 보안을 강화합니다. -->
+          GitHub 바로가기
+        </a>
+      </nav>
+  </footer>
+
+  <script>
+    document.querySelector("[data-year]").textContent =
+      `© ${new Date().getFullYear()} Kimkm03`;
+  </script>
+
+
+</body>
+</html>

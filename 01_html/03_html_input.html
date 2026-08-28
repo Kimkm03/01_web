@@ -46,5 +46,27 @@
     <input type="submit" value="전송"> <!-- value를 지워보고 바꿔보기 -->
     <input type="reset" value="초기화">
 </form>
+<hr>
+
+<form id="inputForm">
+    <label>이름:</label>
+    <input type="text" name="userName">
+    <input type="submit" value="전송">
+</form>
+
+<p id="result"></p>
+
+<script>
+    const form = document.querySelector('#inputForm');
+    const result = document.querySelector('#result');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const input = form.elements.namedItem('userName');
+      result.textContent = `입력한 이름: ${input.value}`;
+    });
+</script>
+
 </body>
 </html>

@@ -27,7 +27,7 @@ v fixed (고정된) - 처음부터 끝까지 붙박이
 
 div, span {
     margin: 20px;
-    padding: 20px;
+    padding: 200px;
     border: blue dashed;
 }
 
@@ -48,6 +48,19 @@ footer {
     right: 0px;
     left: 0px;
     background-color: blue;
+}
+
+#span1 {
+    /* 원래 자기 위치를 기준으로 */
+    position: relative;
+    top: 30px;
+}
+
+#div2{
+    /* position: sticky; */
+    position: absolute;
+    background-color: yellow;
+    top: 30px;
 }
 
 content {

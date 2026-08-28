@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!-- HTML5 문서임을 선언합니다. -->
+<html lang="ko">
+  <!-- 문서의 기본 언어가 한국어임을 지정해 접근성을 높입니다. -->
+
+  <head>
+    <!-- 문서 설정과 외부에 직접 표시되지 않는 정보를 작성합니다. -->
+    <meta charset="UTF-8">
+    <!-- 한글이 깨지지 않도록 문자 인코딩을 지정합니다. -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 모바일 화면의 실제 너비에 맞춰 반응형으로 표시합니다. -->
+
+    <title>Kimkm03 index</title>
+    <!-- 브라우저 탭과 검색 결과에 표시될 문서 제목입니다. -->
+
+    <style>
+      :root {
+        font-family: "Trebuchet MS", "Malgun Gothic", sans-serif;
+        color: #263238;
+        background: #eef2f3;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        max-width: 1100px;
+        min-height: 100vh;
+        margin: 0 auto;
+        background: #ffffff;
+        line-height: 1.6;
+      }
+
+      header {
+        position: relative;
+        min-height: 88px;
+        padding: 22px 7%;
+        background: #263238;
+      }
+
+      .logo {
+        position: absolute;
+        top: 22px;
+        left: 7%;
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      header nav {
+        position: absolute;
+        top: 28px;
+        right: 7%;
+        display: flex;
+        gap: 24px;
+      }
+
+      header nav a {
+        color: #ffffff;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      header nav a:hover,
+      header nav a:focus-visible,
+      header nav a[aria-current="page"] {
+        color: #80cbc4;
+      }
+
+      main {
+        padding: 0 7% 64px;
+      }
+
+      section {
+        padding: 64px 0;
+        border-bottom: 1px solid #d9e1e3;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      h1 img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      h2 {
+        color: #00796b;
+      }
+
+      figure {
+        margin: 24px 0;
+      }
+
+      figure img {
+        max-width: 100%;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 0;
+        list-style: none;
+      }
+
+      li img {
+        display: block;
+        max-width: 180px;
+      }
+
+      .about article {
+        margin-top: 24px;
+        padding: 24px;
+        border-left: 4px solid #00796b;
+        background-color: #f4f8f8;
+      }
+
+      .about article h3 {
+        margin-top: 0;
+        color: #00796b;
+      }
+
+      .about article p {
+        margin-bottom: 0;
+      }
+
+      .skills {
+        padding-top: 32px;
+      }
+
+      .skill-group {
+        margin-top: 24px;
+        padding: 0;
+        border-bottom: 0;
+      }
+
+      .skill-group h3 {
+        margin-bottom: 12px;
+      }
+
+      footer {
+        position: relative;
+        min-height: 88px;
+        padding: 28px 7%;
+        color: #ffffff;
+        background: #37474f;
+        text-align: center;
+      }
+
+      footer p {
+        margin: 0;
+      }
+
+      footer nav {
+        position: absolute;
+        right: 7%;
+        bottom: 28px;
+      }
+
+      footer a {
+        color: #7f899c;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      footer a:hover,
+      footer a:focus-visible {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 사용자에게 실제로 보이는 페이지 내용을 작성합니다. -->
+
+    <header>
+      <!-- 페이지의 상단 영역이며 로고와 주요 메뉴를 포함합니다. -->
+
+      <span class="logo" aria-label="Kimkm03 이니셜">
+        KM
+      </span>
+
+      <nav aria-label="주요 메뉴">
+        <a href="index.html">소개</a>
+        <a href="keyword.html">키워드</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 페이지에서 가장 핵심이 되는 콘텐츠 영역입니다. -->
+
+      <section aria-labelledby="intro-title">
+        <!-- 소개 내용을 하나의 주제별 영역으로 묶습니다. -->
+        <!-- aria-labelledby: intro-title 제목이 이 영역의 제목임을 연결합니다. -->
+
+        <h1 id="intro-title">
+          <!-- h1: 페이지에서 가장 중요한 제목입니다. -->
+          <!-- id: aria-labelledby가 이 제목을 찾을 수 있도록 고유한 이름을 부여합니다. -->
+
+          <img
+            src="https://capsule-render.vercel.app/api?type=waving&color=7F899C&height=360&text=This+too+shall+pass+away.&fontSize=70&fontAlign=50&fontAlignY=40&desc=Happy+Coding+Day&descSize=20&descAlign=50&descAlignY=60"
+            alt="This too shall pass away. Happy Coding Day"
+          >
+          <!-- img: 마크다운의 헤더 이미지를 HTML에 표시합니다. -->
+          <!-- src: 표시할 이미지의 주소입니다. -->
+          <!-- alt: 이미지가 보이지 않을 때와 화면 낭독기를 위한 대체 설명입니다. -->
+        </h1>
+      </section>
+
+      <section class="about" aria-labelledby="about-title">
+        <!-- 자기소개 내용을 하나의 의미 있는 영역으로 묶습니다. -->
+        <!-- class: 자기소개 영역의 스타일을 지정합니다. -->
+        <!-- aria-labelledby: about-title을 이 영역의 제목으로 연결합니다. -->
+
+        <h2 id="about-title">About Me</h2>
+        <!-- h2: main 안의 두 번째 단계 제목입니다. -->
+        <!-- id: 자기소개 section과 제목을 연결합니다. -->
+
+        <article>
+          <!-- 다른 콘텐츠와 독립적으로 읽을 수 있는 자기소개 항목입니다. -->
+
+          <h3>나의 소개</h3>
+          <!-- h3: About Me 하위 항목의 제목입니다. -->
+
+          <p>꾸준히 배우고 경험하며 성장하는 프론트엔드 개발자입니다.</p>
+          <!-- p: 자기소개 문단을 나타냅니다. -->
+        </article>
+
+        <article>
+          <!-- 목표라는 독립적인 자기소개 항목입니다. -->
+
+          <h3>나의 목표</h3>
+          <!-- 목표 항목의 제목입니다. -->
+
+          <p>접근성과 사용성을 고려한 웹 페이지를 구현하고 싶습니다.</p>
+          <!-- 목표 내용을 문단으로 작성합니다. -->
+        </article>
+      </section>
+
+      <section class="skills" aria-labelledby="skills-title">
+        <!-- 보유 기술 정보를 하나의 영역으로 묶습니다. -->
+
+        <h2 id="skills-title">🦾 Skills</h2>
+        <!-- 기술 영역의 제목입니다. -->
+
+        <figure>
+          <!-- 이미지와 이미지 설명을 하나의 의미 있는 묶음으로 표현합니다. -->
+
+          <img
+            src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=Kimkm03&layout=compact&theme=nord"
+            alt="GitHub 언어 사용 통계"
+          >
+          <!-- GitHub에서 제공하는 언어 사용 통계 이미지입니다. -->
+        </figure>
+
+        <section class="skill-group" aria-labelledby="language-title">
+          <!-- 프로그래밍 언어와 프레임워크를 별도의 하위 영역으로 묶습니다. -->
+
+          <h3 id="language-title">🧑‍💻 Lang and Frameworks</h3>
+          <!-- 하위 기술 영역의 제목입니다. -->
+
+          <ul>
+            <!-- 여러 기술을 순서 없이 나열하므로 ul을 사용합니다. -->
+
+            <li>
+              <img
+                src="https://img.shields.io/badge/html5-E34F26.svg?style=for-the-badge&amp;logo=html5&amp;logoColor=white"
+                alt="HTML5"
+              >
+            </li>
+
+            <li>
+              <img
+                src="https://img.shields.io/badge/css3-1572B6.svg?style=for-the-badge&amp;logo=css3&amp;logoColor=white"
+                alt="CSS3"
+              >
+            </li>
+
+            <li>
+              <img
+                src="https://img.shields.io/badge/javascript-F7DF1E.svg?style=for-the-badge&amp;logo=javascript&amp;logoColor=white"
+                alt="JavaScript"
+              >
+            </li>
+
+            <li>
+              <img
+                src="https://img.shields.io/badge/Java-000000.svg?style=for-the-badge"
+                alt="Java"
+              >
+            </li>
+          </ul>
+        </section>
+
+        <section class="skill-group" aria-labelledby="infra-title">
+          <!-- 인프라와 도구를 별도의 하위 영역으로 묶습니다. -->
+
+          <h3 id="infra-title">🛠️ Infra and Tools</h3>
+          <!-- 인프라와 도구 영역의 제목입니다. -->
+
+          <ul>
+            <li>
+              <img
+                src="https://img.shields.io/badge/github-181717.svg?style=for-the-badge&amp;logo=github&amp;logoColor=white"
+                alt="GitHub"
+              >
+            </li>
+          </ul>
+        </section>
+      </section>
+    </main>
+
+    <footer>
+      <!-- 페이지 하단의 저작권과 외부 링크 영역입니다. -->
+
+      <p data-year></p>
+      <!-- data-year: JavaScript가 현재 연도를 삽입할 위치를 찾기 위한 사용자 정의 속성입니다. -->
+
+      <nav aria-label="외부 링크">
+        <!-- 페이지 외부로 이동하는 링크를 별도의 nav로 구분합니다. -->
+
+        <a
+          href="https://github.com/Kimkm03"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <!-- href: GitHub 주소로 이동합니다. -->
+          <!-- target="_blank": 새 탭에서 GitHub를 엽니다. -->
+          <!-- rel: 새 탭을 열 때 원본 페이지에 접근하지 못하도록 보안을 강화합니다. -->
+          GitHub 바로가기
+        </a>
+      </nav>
+    </footer>
+
+    <script>
+      // 현재 페이지를 확인해 활성 메뉴를 표시하기 위해 사용합니다.
+      const currentPage = location.pathname.split("/").pop() || "index.html";
+
+      // 모든 메뉴 링크를 찾아 현재 페이지와 주소를 비교합니다.
+      document.querySelectorAll("nav a").forEach((link) => {
+        if (link.getAttribute("href") === currentPage) {
+          // 현재 페이지 링크임을 보조기술에 알려줍니다.
+          link.setAttribute("aria-current", "page");
+        }
+      });
+
+      // footer의 data-year 요소에 현재 연도를 표시합니다.
+      document.querySelector("[data-year]").textContent =
+        `© ${new Date().getFullYear()} Kimkm03`;
+    </script>
+  </body>
+</html>
