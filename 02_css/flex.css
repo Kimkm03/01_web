@@ -1,13 +1,28 @@
 body {
-    margin: 0px;
+    margin: 0;
 }
 
-/* 기준이 되는 부모 컨테이너에서 flex를 지정해놓고 */
+/* flex는 부모 컨테이너에 걸어놓고 자식 컨테이너를 일괄 지휘 */
 .container {
-    border: black solid 3px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly; /* 주축 정렬 옵션 */
+    flex-wrap: wrap; /* 줄바꿈 옵션 */
+    /* 중심 축 정하는 옵션 */
+    /* flex-direction: column-reverse; */
+    align-items: flex-end; /* 교차축 정렬 옵션 */
 }
 
-/* 일괄적으로 특정 위치의 값만 선택할 때 odd, even */
-.item:nth-child(even) {
+.item {
     border: black dashed;
+}
+
+/* order라는 속성으로 자식 순서를 조절 */
+#item4 {
+    order: -1;
+    flex-basis: 30%; /* flex-basis는 flex-grow와 flex-shrink의 기준이 되는 값 */
+}
+
+#item5 {
+    order: -2;
 }

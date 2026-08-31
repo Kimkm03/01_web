@@ -2,14 +2,17 @@ body {
     margin: 0px;
 }
 .container {
+    height: 100vh;
     border: 1px black dashed;
     display: grid;
+    /* 화면을 vw, vh 단위로 나눌때는 총합이 100이므로 100기준으로 작성 */
     /* grid-template-columns: 20vw 30vw 30vw 10vw 10vw */
     /* fr : 전체 grid를 구간으로 나누는 상대적 단위 */
     /* grid-template-columns: 2fr 3fr 2fr 6fr; */
     /* grid-template-columns: 30% 70%; */
     /* grid-template-columns: 200px 7fr 3fr; */
-    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1vw;
 }
 
 .item {
@@ -17,18 +20,20 @@ body {
 }
 
 #item1 {
-
+    grid-row: 5;
+    grid-column: 1/5;
 }
 
 #item2 {
-
+    grid-row: 1;
+    grid-column: 1/5;
 }
 
 #item3 {
-
+    grid-row: 2/5;
 }
 
-/* @media screen and (max-width: 922px) {
+@media screen and (max-width: 922px) {
 body {
     background-color: red;
 }
@@ -40,8 +45,9 @@ body {
     }
     }
 
+
 @media (orientation: landscape) {
     body {
         color: blue;
     }
-} */
+}
