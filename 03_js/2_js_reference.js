@@ -5,16 +5,63 @@
 //   - 순서대로 값을 꺼낼 수 있다. (index로)
 //   - 자바스크립트의 배열 index는 0부터 시작
 //   - 배열의 길이는 .length 라는 속성으로 확인
-
+var array1 = [1, '가', true, null, undefined, [1, 2, 3]];
+array1
+console.log(array1[4]);
+console.log(typeof array1);
+console.log(array1.length);
 
 
 // 실습: array1이라는 배열을 만들고 apple, banana, carrot 세개의 문자열을 각 index에 넣어보세요.
+var array1 = ['apple', 'banana', 'carrot'];
+array1
+console.log(array1[0]);
+
+// 순서대로 값을 저장하는 자료구조 (선형 자료구조)
+// 맨 뒤에 값을 삽입 push(), 삭제 pop()
+array1.push("daisy");
+console.log(array1);
+array1.pop();
+console.log(array1);
+
+// 맨 앞(unshift, shift)
+array1.unshift("daisy");
+console.log(array1);
+array1.shift();
+console.log(array1);
+
+// 중간 어딘가 값을 추가(splice)
+array1.splice(1, 1, "ban");
+console.log(array1);
+
+// 맨 뒤에 donut을 추가
+// ban~ 를 삭제하고 bee, betray라는 단어 넣기
+array1.push("donut");
+console.log(array1);
+array1.splice(1, 1, 'bee', 'betray');
+console.log(array1);
 
 // JS의 sort는 기본적으로 유니코드로 정렬을 합니다. 숫자는 어떻게 정렬해야 할까요?
+var array2 = [-565, -3, 556, 1.3, NaN, null, undefined, true, 0];
+array2
+console.log(Number(NaN));
+console.log(typeof(NaN));
 
-
+console.log(array2.sort(function(a, b){
+  return a - b;
+}));
 // -2. Set(집합) - 중복을 걸러내는 유형. new Set([1,3,4,5,6,6])
-
+var set1 = [1,3,4,5,6,6];
+set1 = new Set(set1);
+set1
+console.log(typeof(set1));
+// set1.push(6, 7, 8)
+set1.add(7);
+console.log(set1);
+set1.add(6);
+console.log(set1);
+set1.delete(6);
+console.log(set1);
 
 // -3. Object(일반 객체) - key(기본 자료형)로 value를 부르는 종류의 dictionary 타입
 //   - key는 기본자료형만 사용 가능합니다. (object, array, function은 불가)
@@ -23,7 +70,9 @@
 //   - key 중심으로 움직입니다. value로 key를 찾을 수 없습니다.
 //   - key의 자료형은 string, number, boolean, null, undefined, symbol이 가능합니다.
 //   - value는 모든 자료형이 가능합니다. (기본자료형, 참조자료형 모두 가능)
-
+var dict1 = {"name" : "김경모", "age" : 24, "hobby" : ["음악 듣기", "볼링"]};
+//key(문패) : value(값), key : value
+console.log(dict1['name']);
 
 /* -4. Map: dictionary와 마찬가지로 키-값으로 쌍을 저장합니다. 키로 값을 꺼내 씁니다.
     - 키로 모든 데이터 타입을 받아줍니다. 
