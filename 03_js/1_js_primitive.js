@@ -282,3 +282,26 @@ console.log("----------------");
     console.log("그럼 뭐 드실래요?");
 }
 
+var age = -1;
+
+// if (0 < age < 18) {
+if (0 < age && age < 13) {
+  console.log("어린이");
+} else if(13<= age && age < 18){
+  console.log("미성년자");
+} else if(age >= 18){
+  console.log("성인");
+} else {
+  console.log("잘못된 나이입니다.");
+};
+
+// -------------
+if (0 > age) { // 첫번째로 0보다 작은지 확인 
+ console.log("나이가 0보다 작을 수 없습니다.")
+} else if (age < 13) {  
+  console.log("어린이"); 
+  } else if (age < 18) {
+    console.log("미성년자")
+  } else if (18 <= age ) {
+    console.log("성인");
+  };
