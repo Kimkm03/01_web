@@ -74,6 +74,23 @@ var dict1 = {"name" : "김경모", "age" : 24, "hobby" : ["음악 듣기", "볼�
 //key(문패) : value(값), key : value
 console.log(dict1['name']);
 
+// dict2 만들고,, 가: 가위 / 나: 나비, 라: 라디오, 다 : 다람쥐
+
+var dict2 = {"가" : "가위", "나" : "나비", "라" : "라디오", "다" : "다람쥐", 1: 1010, true: {'참': true}};
+console.log(dict2[1]);
+dict2['가'] = "가랑이";
+dict2['마'] = "마술사";
+dict2
+delete dict2['가'];
+dict2
+
+console.log('가' in dict2);
+console.log('나' in dict2);
+
+console.log(Object.keys(dict2));
+console.log(Object.values(dict2));
+console.log(Object.entries(dict2));
+
 /* -4. Map: dictionary와 마찬가지로 키-값으로 쌍을 저장합니다. 키로 값을 꺼내 씁니다.
     - 키로 모든 데이터 타입을 받아줍니다. 
     - 삽입 순서대로 요소를 반복할 수 있습니다.
@@ -81,7 +98,20 @@ console.log(dict1['name']);
     - set() get()으로 삽입, 조회를 할 수 있습니다.
     - 뎁스가 복잡하거나, 데이터의 입력 순서, 양이 많을 때 
 */
-
+var map1 = new Map();
+map1.set('나', '나비');
+map1.set('다', '다람쥐');
+map1.set('다', '다리미'); // 이미 있는 key는 value가 바뀝니다.
+map1.set(1, 1010); // 들어오는 순서가 보장됩니다. 
+console.log(map1.get('나')) // set으로 삽입한 값만 get으로 부를 수 있습니다.
+map1.delete('나')
+// console.log(Object.entries(map1)); // dict로 우겨넣은 값만 출력됨 
+console.log(map1.get('1')); // undefined: key에 원래 자료형 그대로를 보관하기 때문에 문자열로 변환되지 않습니다. 
+map1;
+console.log(map1.keys());
+console.log([...map1.keys()]);
+console.log([...map1.values()]);
+console.log([...map1.entries()]);
 
 /*
 9. 반복문: for/while
@@ -90,20 +120,98 @@ console.log(dict1['name']);
 }
 */
 
+for (var i = 0; i < 3; i++) {
+  console.log(i);
+}
+
+// 1~5까지 출력
+for (var i = 1; i <= 5; i++) {
+  console.log(i);
+}
+
+// 5~1까지 출력
+for (var i = 5; i > 0; i--) {
+  console.log(i);
+}
+
 // 실습: 5, 3, 1이 출력되도록 변경
+for (var i = 5; i >= 1; i -= 2) {
+  console.log(i);
+}
 
 // 배열의 길이는 .length 라는 속성으로 확인
+var arr = ['김경모','신짱구', '신짱아'];
+console.log(arr.length);
 
+for (var i = 0; i < arr.length; i++) {
+  console.log(`${arr[i]}야, 안녕? `);
+}
 
+dict2 
+for (var key in dict2) {
+  console.log(`key: ${key} - value: ${dict2[key]}`);
+}
 
+map1
+for (var [key, value] of map1) {
+  console.log(`key: ${key} - value: ${value}`);
+}
 // -2. while문 - 반복할 횟수가 정해지지 않았을 때
 // 1. while문 바깥에 조건을 끝낼 실마리를 만들어주기
+var i = 1;
+while (i < 6) {
+  console.log(i);
+  i++;
+}
+
+// 5~1까지 출력
+var i = 5;
+while (i > 0) {
+  console.log(i);
+  i--;
+}
+
+// 1,3,5가 출력되도록 변경
+var i = 1;
+while (i <= 5) {
+  console.log(i);
+  i+= 2;
+}
+
 // 2. 무한반복으로 작성하고 break, continue로 강제로 흐름을 제어
+var i = 1;
+while (true) {
+  console.log(i);
+  i++;
+  if (i > 5) {
+    break;
+  }
+}
 
+var i = 5;
+while (true) {
+  console.log(i);
+  i--;
+  if (i < 1) {
+    break;
+  }
+}
 
+var i = 1;
+while (true) {
+  console.log(i);
+  i+= 2;
+  if (i > 5) {
+    break;
+  }
+}
 
 // arr 와 .length 속성을 이용해서 arr의 모든 원소를 출력하는 while문을 만들어보세요.
-
+var i = 0;
+while (i < arr.length) {
+  console.log(arr[i]);
+  i++;
+}
 
 // forEach (인덱스를 경유하지 않고 바로 값만 출력하는 메서드)
 
@@ -129,6 +237,97 @@ console.log(dict1['name']);
 */
 
 var arr = ['짱구', '짱아', '훈이']
+arr
+
+function hello(){
+  console.log('안녕하세요!');
+}
+
+hello();
+
+function hello1(이름, 나이) {
+  console.log(`${이름}님, 안녕하세요. ${나이}살이시군요.`);
+}
+
+hello1('철수', 25);
+
+function hello2(이름, 나이) {
+  return `${이름}님, 안녕하세요. ${나이}살이시군요.`;
+}
+
+var hi = hello2();
+var hello = hello1();
+
+console.log(hello);
+console.log(hi);
+
+function hello3(){
+  return `hello3가 종료될 때 달고 돌아온 값`;
+}
+
+var hi2 = hello3();
+console.log(hi2);
+
+// 1, 3, 5를 출력하는 반복문 oddNums() 호출
+function oddNums(){
+  for (var i = 1; i < 6; i+=2) {
+    console.log(i);
+  }
+}
+oddNums();
+
+// 1~5까지 홀수 리턴
+function setOddNums(){
+  var oddNums = [];
+
+  for (var i = 1; i < 6; i += 2) {
+    oddNums.push(i);
+  }
+
+  return oddNums;
+}
+
+var result = setOddNums();
+console.log(result); // [1, 3, 5]
+
+// start, end 홀수 출력
+function getOddNums(start=1, end=10){
+  for (var i = start; i <= end; i++) {
+    if (i % 2 === 1) {
+      console.log(i);
+    }
+  }
+}
+getOddNums(2, 16);
+
+// start, end 홀수 리턴
+function setOddNumsFinal(start=1, end=5){
+  var oddNums = [];
+  for (var i = start; i <= end; i++) {
+    if (i % 2 === 1) {
+      oddNums.push(i);
+    }
+  }
+  return oddNums;
+}
+var arr = setOddNumsFinal(2, 10);
+console.log(arr);
+
+var test = (a) => {
+  console.log(`${a} 테스트`);
+}
+test('Hello');
+
+var numbers = [4, 2, 5, 1, 3];
+numbers.sort(function (a, b) {
+  return a - b;
+});
+console.log(numbers);
+
+var ordered = function (a, b) {
+  return a - b;
+}
+
 
 // -4. 함수의 스코프
 //     1. 스코프 : 변수나 함수가 어디까지 접근해서 사용할 수 있는지. 
