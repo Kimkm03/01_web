@@ -17,5 +17,23 @@
             <li>철수</li>
         </ul>
     </div>
+
+    <script>
+        function myfun(){
+            const titles = document.querySelectorAll('.title');
+            
+            for(let i=0; i<titles.length; i++){
+                titles[i].innerHTML = '바뀜';
+            }
+            
+        }
+        // document.querySelector('#one').innerHTML = '<img src="./jjanggu.png" alt="짱구">';
+        // document.getElementById('four').innerHTML = '<li>훈이</li><li>철수</li>';
+
+        function myfun2(){
+            document.querySelector('ul').innerHTML = '<img src="./jjanggu.png" alt="짱구">';
+            // document.getElementsByClassName('title')[0].innerHTML = '짱구는'
+        }
+    </script>
 </body>
 </html>

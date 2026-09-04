@@ -1,0 +1,110 @@
+:root {
+    font-family: "Trebuchet MS", "Malgun Gothic", sans-serif;
+    color: #263238;
+    background: #e8f5f2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 620px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 72px 24px;
+    background: #ffffff;
+    text-align: center;
+}
+
+body::first-line {
+    color: #00796b;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+#targetChar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+    margin: 32px auto;
+    border: 8px solid #80cbc4;
+    border-radius: 50%;
+    background: #e0f2f1;
+    color: #00695c;
+    font-size: 7rem;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 12px 24px rgba(0, 121, 107, 0.16);
+}
+
+#score,
+#timer {
+    margin: 12px 0;
+    font-weight: 700;
+}
+
+#score {
+    color: #00796b;
+    font-size: 2rem;
+}
+
+#timer {
+    color: #546e7a;
+    font-size: 1.1rem;
+}
+
+button {
+    min-width: 120px;
+    margin: 28px 5px 0;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 6px;
+    background: #00796b;
+    color: #ffffff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    background: #004d40;
+    transform: translateY(-2px);
+}
+
+button:focus-visible {
+    outline: 3px solid #ffb300;
+    outline-offset: 3px;
+}
+
+#resetButton {
+    background: #607d8b;
+}
+
+#resetButton:hover {
+    background: #37474f;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 48px 16px;
+    }
+
+    #targetChar {
+        width: 170px;
+        height: 170px;
+        font-size: 5rem;
+    }
+
+    #score {
+        font-size: 1.6rem;
+    }
+
+    button {
+        min-width: 105px;
+        margin-top: 24px;
+    }
+}

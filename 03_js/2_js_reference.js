@@ -350,25 +350,26 @@ var ordered = function (a, b) {
 
 
 // scope : 변수에 접근할 수 있는 위치를 제어 
-// var x = '가'; // 함수 범위
-// let y = '나'; // 블록 범위
-// const z = '다'; // 블록 범위, 상수 (값 변경 불가)
+var x = '가'; // 함수 범위
+let y = '나'; // 블록 범위
+const z = '다'; // 블록 범위, 상수 (값 변경 불가)
 
-// function variableExample() {
-//     var x = 10; // 함수 범위
-//     let y = 20; // 블록 범위
-//     const z = 30; // 블록 범위, 상수 (값 변경 불가)
+function variableExample() {
+    var x = 10; // 함수 범위
+    let y = 20; // 블록 범위
+    const z = 30; // 블록 범위, 상수 (값 변경 불가)
 
-//     if (true) {
-//         var x = 40; // 같은 함수 내에서 var 변수는 덮어씌워짐
-//         let y = 50; // 블록 내에서만 유효
-//         const z = 60; // 블록 내에서만 유효
+    if (true) {
+        var x = 40; // 같은 함수 내에서 var 변수는 덮어씌워짐
+        let y = 50; // 블록 내에서만 유효
+        const z = 60; // 블록 내에서만 유효
 
-//         console.log('if문 내부:', x, y, z); // 40, 50, 60
-//     }
+        console.log('if문 내부:', x, y, z); // 40, 50, 60
+    }
 
-//     console.log('if문 외부:', x, y, z); // 40, 20, 30 (var는 재할당되었지만, let과 const는 블록 범위를 가짐)
-// }
+    console.log('if문 외부:', x, y, z); // 40, 20, 30 (var는 재할당되었지만, let과 const는 블록 범위를 가짐)
+}
+variableExample();
 
 
 /* 11.  클래스: 같은 형식으로 사용하기 위한 자료형을 미리 만들어놓고 계속 객체를 찍어서 재사용 
@@ -385,8 +386,153 @@ Person.prototype.greet = function () {
     console.log('안녕하세요!' + this.name)
   }
 
+var 김경모 = new Person('김경모', 24);
+var 신짱구 = new Person('신짱구', 5);
+
+console.log(김경모.age);
+김경모.greet();
+console.log(신짱구.name);
+신짱구.greet();
+
 // static: 클래스를 통해 접근하는 클래스 변수, 클래스 메서드
 // 인스턴스를 통해 접근하는 인스턴스 변수(this로 전달), 인스턴스 메서드
 // 은닉성 구현: #을 붙인 private 변수를 사용하여 외부에서 접근하지 못하도록 숨길 수 있습니다.
 
+class Person2 {
+  // 생성자
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
 
+  // 메서드
+  greet() {
+    console.log('Person2에서 - 안녕하세요!' + this.name)
+  }
+}
+
+var 김경모 = new Person2('김경모', 24);
+console.log(김경모.age);
+김경모.greet();
+
+// Attacker
+class Fighter extends Person2 {
+  fighting() {
+    console.log(`${this.name}이 싸웁니다.`)
+  }
+}
+
+var Attacker = new Fighter('공격자', 24);
+console.log(Attacker.name);
+Attacker.greet();
+Attacker.fighting();
+
+// Student
+class Student extends Person2 {
+  study() {
+    console.log(`${this.name}이 공부합니다.`)
+  }
+}
+
+var Student1 = new Student('학생1', 20);
+Student1.greet();
+Student1.study();
+
+// OnlineFighter
+class OnlineFighter extends Fighter {
+  keyboardFighting() {
+    console.log(`${this.name}이 숨어서 싸웁니다.`)
+  }
+}
+
+var 온라인공격자 = new OnlineFighter('온라인공격자', 24);
+온라인공격자.greet();
+온라인공격자.fighting();
+온라인공격자.keyboardFighting();
+
+// BankAccount 라는 은행 계좌를 관리하기 위한 class를 만들어보겠습니다.
+// bankName, name, accountNumber, balance 
+
+
+// BankAccount 라는 은행 계좌를 관리하기 위한 class를 만들어보겠습니다.
+// bankName, name, accountNumber, balance 
+// #을 붙이면 private 변수
+class BankAccount {
+
+  #balance;
+
+  // 클래스 변수: static 이라는 키워드를 앞에 적어둔 클래스 변수로 클래스에서 관리하기 위한 속성을 저장합니다. 
+  static bankName = '우리';
+  static accountNo = 0; // 해당 은행 총 계좌 수
+
+  // 클래스 메서드: static 이라는 키워드를 앞에 적어서 클래스에서 필요한 동작을 만듭니다.
+  static hello() {
+    console.log(`어서오세요. ${this.bankName}은행입니다~ 개설 이래 현재까지 총 ${this.accountNo}개의 계좌가 개설되었습니다.`);
+  }
+
+  // 인스턴스 변수: this 라는 키워드로 각 새로 만들어진 고객 인스턴스만의 고유한 값들을 전달  
+  constructor(name, accountNumber, balance) {
+    this.name = name;
+    this.accountNumber = accountNumber;
+    this.#balance = balance;
+    this.cusAccountNo = ++BankAccount.accountNo; // 그 때의 계좌수
+  }
+
+  // 인스턴스 메서드: deposit: 입금  - 기존 balance에 새로 들어온 금액을 추가
+  set deposit(amount=0) { // setter
+    this.#balance += amount;
+  } 
+
+  // 인스턴스 메서드: withdraw: 출금 - 기존 balace에 새로 빠져나간 금액을 제외 
+  set withdraw(amount=0) { // setter
+    this.#balance -= amount;
+  } 
+
+  get checkAmount() { // getter
+    console.log(this.#balance);
+  }
+}
+
+var 아이유 = new BankAccount('IU', '123-45', 30000);
+아이유.deposit = 40000;
+아이유.checkAmount;
+아이유
+아이유.withdraw = 4000;
+아이유
+console.log(BankAccount.bankName);
+아이유.checkAmount;
+아이유
+
+// BankAccount 상속 InsAccount
+// 클래스 변수를 bankName "동양"으로 바꿔서 재정의(override)
+// 생성자에 kind라는 인스턴스 변수 추가 변액(default) / 정액 등 보험의 종류 추가
+class InsAccount extends BankAccount {
+  static bankName = '동양';
+  static accountNo = 0;
+
+  constructor(name, accountNumber, balance, kind='변액') {
+    super(name, accountNumber, balance);
+    this.kind = kind;
+    this.cusAccountNo = ++InsAccount.accountNo; // 그 때의 계좌수
+  }
+
+  set changeKind(newKind) {
+    this.kind = newKind;
+  }
+
+  get checkKind() {
+    console.log(this.kind);
+  }
+}
+
+InsAccount.hello();
+var 사용자 = new InsAccount('사용자', '123-66', 30000, '정액');
+사용자
+InsAccount.hello();
+사용자.deposit = 20000;
+사용자.checkAmount;
+사용자.withdraw = 5000;
+사용자.checkAmount
+사용자.changeKind = '차액';
+사용자.checkKind;
+console.log(InsAccount.bankName);

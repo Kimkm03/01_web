@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2 id="num">0</h2>
+    <input type="button" value="+" onclick="add()">
+    <input type="button" value="-" id="minusButton">
+    <input type="button" value="reset" id="resetButton">
+
+    <script>
+        // function add(){
+        //     const count = document.getElementById('count');
+        //     count.innerText = parseInt(count.innerText) + 1;
+        // }
+
+        // function minus(){
+        //     const count = document.getElementById('count');
+        //     count.innerText = parseInt(count.innerText) - 1;
+        // }
+
+        let count = document.getElementById('num');
+        console.log(`😊 ${count}`);
+
+        // 숫자 증가
+        function add(){
+            count.innerText++;
+            //console.log(`😊 ${count}`);
+        }
+
+        // 숫자 감소
+        // 1. 이벤트 리스너
+        const minusButton = document.getElementById('minusButton');
+        minusButton.addEventListener('click', () => {
+            if(count.innerText > 0){
+                count.innerText--;
+            }
+        });
+
+        // 2. onclick 속성
+        // function minus(){
+        //     if(count.innerText > 0){
+        //         count.innerText--;
+        //     }
+        //     //console.log(`😊 ${count}`);
+        // }
+
+        // 숫자 초기화
+        // 1. 이벤트 리스너
+        const resetButton = document.getElementById('resetButton');
+        resetButton.addEventListener('click', () => {
+            count.innerText = 0;
+        })
+
+        // 2. onclick 속성
+        // function reset(){
+        //     count.innerText = 0;
+        //     //console.log(`😊 ${count}`);
+        // }
+    </script>
+</body>
+</html>
